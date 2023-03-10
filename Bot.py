@@ -16,5 +16,5 @@ def handle_text(message):
     name,price,have,url = Parsing.parse(message.text)
     for i in range(len(name)):
         a = name[i], price[i], have[i], url[i]
-        bot.send_message(message.chat.id, str(a[0])+'\nЦена: '+str(a[1])+'\nНа складе: '+str(a[2])+'\n'+str(a[3]))
+        bot.send_message(message.chat.id, str(a[0])+'\nЦена: '+str(a[1])+'\nВ наличии: '+str(a[2])+'\n'+str(a[3]))
         time.sleep(0.5)
