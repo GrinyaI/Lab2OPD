@@ -9,9 +9,10 @@ dp = Dispatcher(bot)
 @dp.message_handler(commands=['start'])
 async def start_command(msg: types.Message):
     user_id = msg.from_user.id
+    user_name = msg.from_user.first_name
     user_full_name = msg.from_user.full_name
     print(user_id, user_full_name, time.asctime())
-    await bot.send_message(msg.from_user.id, 'Привет, я бот поиска лекарств в сети аптек Фармакопейка.\nВведите название лекарства:')
+    await bot.send_message(msg.from_user.id, 'Привет, '+str(user_name)+'.\nЯ бот поиска лекарств в сети аптек Фармакопейка.\nВведите название лекарства:')
 
 @dp.message_handler(content_types=['text'])
 async def find(msg: types.Message):
