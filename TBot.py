@@ -7,9 +7,6 @@ with open('Token','r') as tok:
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
     bot.send_message(m.chat.id, 'Привет, я бот поиска лекарств в сети аптек Фармакопейка.\nВведите название лекарства:')
-@bot.message_handler(commands=["0110"])
-def stop(m, res=False):
-    bot.stop_polling()
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     print(message.text)
